@@ -1,0 +1,21 @@
+
+plugin.tx_lbrgooglemaps_googlemap {
+	view {
+		templateRootPaths.0 = {$plugin.tx_lbrgooglemaps_googlemap.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_lbrgooglemaps_googlemap.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_lbrgooglemaps_googlemap.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_lbrgooglemaps_googlemap.persistence.storagePid}
+	}
+	settings {
+		GoogleMap {
+			JavaScript {
+				#GoogleMap = typo3conf/ext/lbr_googlemaps/Resources/Public/JavaScript/GoogleMap.js
+			}
+			Stylesheets {
+				GoogleMap = typo3conf/ext/lbr_googlemaps/Resources/Public/Stylesheets/GoogleMap.css
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+mod.wizards.newContentElement.wizardItems.plugins.elements.tx_lbrgooglemaps_googlemap {
+	icon = EXT:frontend/Resources/Public/Icons/ContentElementWizard/user_defined.gif
+	title = LLL:EXT:lbr_googlemaps/Resources/Private/Language/locallang_db.xlf:plugin.googlemap
+	description = LLL:EXT:lbr_googlemaps/Resources/Private/Language/locallang_db.xlf:plugin.googlemap.description
+	tt_content_defValues.CType = list
+	tt_content_defValues.list_type = lbrgooglemaps_googlemap
+}
+
+mod.wizards.newContentElement.wizardItems.plugins.show := addToList(tx_lbrgooglemaps_googlemap)

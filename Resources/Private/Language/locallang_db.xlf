@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="1970-01-01T01:00:00Z" product-name="lbr_googlemaps">
+		<header/>
+		<body>
+			<trans-unit id="plugin.googlemap">
+				<source>Google Map</source>
+			</trans-unit>
+			<trans-unit id="plugin.googlemap.description">
+				<source>Anzeige von Locations in einer Google Map</source>
+			</trans-unit>
+			<trans-unit id="tx_lbrgooglemaps_domain_model_location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_lbrgooglemaps_domain_model_location.title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_lbrgooglemaps_domain_model_location.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_lbrgooglemaps_domain_model_location.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_lbrgooglemaps_domain_model_location.tooltip">
+				<source>Tooltip</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

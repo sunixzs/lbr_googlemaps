@@ -1,0 +1,26 @@
+.tx-lbr-googlemaps .google-map {
+	height: 200px;
+}
+
+@media screen and (min-height: 500px) {
+	.tx-lbr-googlemaps .google-map {
+		height: 350px;
+	}
+}
+
+@media screen and (min-height: 700px) {
+	.tx-lbr-googlemaps .google-map {
+		height: 500px;
+	}
+}
+
+@media screen and (min-height: 1000px) {
+	.tx-lbr-googlemaps .google-map {
+		height: 570px;
+	}
+}
+
+.tx-lbr-googlemaps .locations {
+	overflow: hidden;
+	height: 0;
+}

@@ -1,0 +1,15 @@
+
+plugin.tx_lbrgooglemaps_googlemap {
+	view {
+		# cat=plugin.tx_lbrgooglemaps_googlemap/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:lbr_googlemaps/Resources/Private/Templates/
+		# cat=plugin.tx_lbrgooglemaps_googlemap/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:lbr_googlemaps/Resources/Private/Partials/
+		# cat=plugin.tx_lbrgooglemaps_googlemap/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:lbr_googlemaps/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_lbrgooglemaps_googlemap//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

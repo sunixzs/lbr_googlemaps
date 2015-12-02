@@ -1,0 +1,33 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<f:flashMessages renderMode="div" />
+	<f:if condition="{locations -> f:count())}">
+		<div id="GoogleMap-{data.uid}" class="google-map"></div>
+		<div id="GoogleMap-{data.uid}-locations" class="locations">
+			<f:for each="{locations}" as="location">
+				<div class="location" data-title="{location.title}" data-longitude="{location.longitude}" data-latitude="{location.latitude}">
+					{location.tooltip -> f:format.html()}
+				</div>
+			</f:for>
+		</div>
+		<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="{f:uri.resource(path:'JavaScript/GoogleMap.js')}"></script>
+		<script>
+		$(document).ready(function () {
+			var GoogleMap{data.uid} = new LBRmedia.GoogleMap;
+			GoogleMap{data.uid}.initMap( "GoogleMap-{data.uid}", {latitude}, {longitude}, 12);
+			$("#GoogleMap-{data.uid}-locations .location").each(function () {
+				var l = GoogleMap{data.uid}.addLocation({
+					title : $(this).attr("data-title"),
+					latitude : $(this).attr("data-latitude"),
+					longitude : $(this).attr("data-longitude"),
+					tooltip : $(this).html()
+				});
+				GoogleMap{data.uid}.showInfoWindow(GoogleMap{data.uid}, l);
+			});
+		});
+		</script>
+	</f:if>
+	
+</f:section>
