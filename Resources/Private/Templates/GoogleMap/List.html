@@ -16,7 +16,7 @@
 		<script>
 		$(document).ready(function () {
 			var GoogleMap{data.uid} = new LBRmedia.GoogleMap;
-			GoogleMap{data.uid}.initMap( "GoogleMap-{data.uid}", {latitude}, {longitude}, 12);
+			GoogleMap{data.uid}.initMap( "GoogleMap-{data.uid}", {latitude}+0.2, {longitude}, {settings.GoogleMap.zoom});
 			$("#GoogleMap-{data.uid}-locations .location").each(function () {
 				var l = GoogleMap{data.uid}.addLocation({
 					title : $(this).attr("data-title"),
