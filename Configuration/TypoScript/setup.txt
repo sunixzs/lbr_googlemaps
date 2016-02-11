@@ -1,12 +1,12 @@
 
-plugin.tx_lbrgooglemaps_googlemap {
+plugin.tx_lbrgooglemaps {
 	view {
-		templateRootPaths.0 = {$plugin.tx_lbrgooglemaps_googlemap.view.templateRootPath}
-		partialRootPaths.0 = {$plugin.tx_lbrgooglemaps_googlemap.view.partialRootPath}
-		layoutRootPaths.0 = {$plugin.tx_lbrgooglemaps_googlemap.view.layoutRootPath}
+		templateRootPaths.0 = {$plugin.tx_lbrgooglemaps.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_lbrgooglemaps.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_lbrgooglemaps.view.layoutRootPath}
 	}
 	persistence {
-		storagePid = {$plugin.tx_lbrgooglemaps_googlemap.persistence.storagePid}
+		storagePid = {$plugin.tx_lbrgooglemaps.persistence.storagePid}
 	}
 	settings {
 		GoogleMap {
