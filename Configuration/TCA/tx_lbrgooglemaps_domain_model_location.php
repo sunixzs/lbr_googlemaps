@@ -21,28 +21,47 @@ return array (
 						'endtime' => 'endtime' 
 				),
 				'searchFields' => 'title,latitude,longitude,tooltip,',
-				'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath ( 'lbr_googlemaps' ) . 'Resources/Public/Icons/tx_lbrgooglemaps_domain_model_location.gif' 
+				'iconfile' => 'EXT:lbr_googlemaps/Resources/Public/Icons/tx_lbrgooglemaps_domain_model_location.gif' 
 		),
 		'interface' => array (
-				'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, latitude, longitude, tooltip' 
+				'showRecordFieldList' => '
+					sys_language_uid,
+					l10n_parent,
+					l10n_diffsource,
+					hidden,
+					title,
+					latitude,
+					longitude,
+					tooltip' 
 		),
 		'types' => array (
 				'1' => array (
-						'showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, latitude, longitude, tooltip;;;richtext:rte_transform[mode=ts_links], --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime' 
+						'showitem' => '
+							sys_language_uid,
+							l10n_parent,
+							l10n_diffsource,
+							title,
+							--palette--;Koordinaten;coordinates,
+							tooltip,
+							--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
+							hidden,
+							starttime,
+							endtime
+						' 
 				) 
 		),
 		'palettes' => array (
-				'1' => array (
-						'showitem' => '' 
+				'coordinates' => array (
+						'showitem' => 'latitude, longitude' 
 				) 
 		),
 		'columns' => array (
-				
 				'sys_language_uid' => array (
 						'exclude' => 1,
 						'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
 						'config' => array (
 								'type' => 'select',
+								'renderType' => 'selectSingle',
 								'foreign_table' => 'sys_language',
 								'foreign_table_where' => 'ORDER BY sys_language.title',
 								'items' => array (
@@ -63,6 +82,7 @@ return array (
 						'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 						'config' => array (
 								'type' => 'select',
+								'renderType' => 'selectSingle',
 								'items' => array (
 										array (
 												'',
@@ -158,6 +178,7 @@ return array (
 				'tooltip' => array (
 						'exclude' => 1,
 						'label' => 'LLL:EXT:lbr_googlemaps/Resources/Private/Language/locallang_db.xlf:tx_lbrgooglemaps_domain_model_location.tooltip',
+						'defaultExtras' => 'richtext:rte_transform[mode=ts_links]',
 						'config' => array (
 								'type' => 'text',
 								'cols' => 40,
@@ -165,18 +186,21 @@ return array (
 								'eval' => 'trim',
 								'wizards' => array (
 										'RTE' => array (
+												'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_rte.gif',
 												'notNewRecords' => 1,
 												'RTEonly' => 1,
-												'type' => 'script',
-												'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
-												'icon' => 'wizard_rte2.gif',
 												'module' => array (
-														'name' => 'wizard_rte' 
-												) 
+														'name' => 'wizard_rich_text_editor',
+														'urlParameters' => array (
+																'mode' => 'wizard',
+																'act' => 'wizard_rte.php' 
+														) 
+												),
+												'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
+												'type' => 'script' 
 										) 
 								) 
 						) 
 				) 
-		)
-		 
+		) 
 );
